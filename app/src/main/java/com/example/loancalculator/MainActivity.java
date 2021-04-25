@@ -178,10 +178,14 @@ public class MainActivity extends AppCompatActivity {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context. ALARM_SERVICE ) ;
         assert alarmManager != null;
         Log.e("test","ScheduleNotificatoin");
+
+        //use below 4line for 10sec notification
         alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 SystemClock.elapsedRealtime()+1800,
                 1800, //write month in  millisec
                 pendingIntent);
+        //Use below line for monthly notification
+        //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime()+1800, AlarmManager.INTERVAL_DAY * 30,pendingIntent);
 
 
         //Code to cancel notification
